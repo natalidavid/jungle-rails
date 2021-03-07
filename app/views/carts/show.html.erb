@@ -4,6 +4,8 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.present? %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -46,7 +48,15 @@
           data-currency="cad">
         </script>
       <% end %>
+
     </div>
   </div>
+
+  <% else %>
+    <div class="alert alert-warning" role="alert">
+      Cart is empty!
+    </div>
+    <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Home page</a>
+  <% end %>
 
 </section>
